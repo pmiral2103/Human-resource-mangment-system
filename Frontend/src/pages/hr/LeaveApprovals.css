@@ -1,0 +1,172 @@
+/* PAGE WRAPPER */
+.leave-approval-page {
+  min-height: 100vh;
+  padding: 60px 30px;
+  color: #ffffff;
+  background: radial-gradient(circle at top, #0f2027, #000);
+  position: relative;
+}
+
+/* TITLE */
+.leave-approval-page h2 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  letter-spacing: 0.5px;
+}
+
+/* TABLE CONTAINER */
+.leave-table-wrapper {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  border-radius: 22px;
+  padding: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6);
+  overflow-x: auto;
+}
+
+/* TABLE */
+.leave-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 14px;
+  min-width: 900px;
+}
+
+/* HEADER */
+.leave-table thead th {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  opacity: 0.7;
+  padding: 14px 16px;
+  text-align: left;
+}
+
+/* ROW */
+.leave-table tbody tr {
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 16px;
+  transition: all 0.35s ease;
+}
+
+.leave-table tbody tr:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 20px 40px rgba(0, 255, 179, 0.15);
+}
+
+/* CELLS */
+.leave-table td {
+  padding: 16px;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+/* EMPLOYEE CELL */
+.employee-cell {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* DATE RANGE */
+.date-range {
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+/* STATUS BADGES */
+.status {
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+  text-align: center;
+  min-width: 90px;
+}
+
+/* STATUS COLORS */
+.status.pending {
+  background: rgba(255, 193, 7, 0.2);
+  color: #ffc107;
+}
+
+.status.approved {
+  background: rgba(0, 255, 179, 0.25);
+  color: #00ffb3;
+}
+
+.status.rejected {
+  background: rgba(255, 77, 77, 0.25);
+  color: #ff4d4d;
+}
+
+/* ACTION BUTTONS */
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* APPROVE */
+.approve-btn {
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: none;
+  background: linear-gradient(135deg, #00ffb3, #00c3ff);
+  color: #000;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.approve-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 255, 179, 0.45);
+}
+
+/* REJECT */
+.reject-btn {
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: none;
+  background: linear-gradient(135deg, #ff4d4d, #ff8c8c);
+  color: #000;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reject-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 77, 77, 0.45);
+}
+
+/* DISABLED STATE */
+.action-buttons button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* EMPTY STATE */
+.no-leaves {
+  text-align: center;
+  padding: 50px;
+  opacity: 0.6;
+  font-size: 15px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .leave-approval-page {
+    padding: 40px 20px;
+  }
+
+  .leave-table {
+    min-width: 700px;
+  }
+}

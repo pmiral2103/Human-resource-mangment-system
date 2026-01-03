@@ -1,0 +1,16 @@
+.hr-payroll-page {
+  min-height: 100vh;
+  padding: 60px 30px;
+  background: radial-gradient(circle at top, #0f2027, #000);
+  color: white;
+  position: relative;
+}
+
+.deduction {
+  color: #ff4d4d;
+}
+
+.net {
+  color: #00ffb3;
+  font-weight: 600;
+}

@@ -1,0 +1,17 @@
+.hr-dashboard {
+  min-height: 100vh;
+  padding: 40px;
+  color: white;
+}
+
+.dashboard-title {
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
