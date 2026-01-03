@@ -39,7 +39,14 @@ const LeaveApprovals = () => {
 
   <div className="leave-table-wrapper">
     <table className="leave-table">
-      <thead>...</thead>
+      <thead>
+  <tr>
+    <th>Employee</th>
+    <th>Status</th>
+    <th>Action</th>
+  </tr>
+</thead>
+
       <tbody>
         {leaves.map((l) => (
           <tr key={l.id}>

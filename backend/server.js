@@ -23,7 +23,6 @@ const db = mysql.createConnection({
 });
 
 const verifyToken = (req, res, next) => {
-  console.log("AUTH HEADER:", req.headers.authorization);
 
   const token = req.headers.authorization?.split(" ")[1];
   if (!token) {
@@ -32,7 +31,6 @@ const verifyToken = (req, res, next) => {
 
   try {
     req.user = jwt.verify(token, process.env.JWT_SECRET);
-    console.log("USER FROM TOKEN:", req.user);
     next();
   } catch (err) {
     console.error("JWT ERROR:", err);
@@ -142,7 +140,8 @@ app.post("/api/forgot-password", (req, res) => {
 
         // 🔥 SEND EMAIL (NON-BLOCKING)
         sendEmail({
-          to: user.email,
+          to: req.body.email,
+
           subject: "Password Reset – Dayflow HRMS",
           html: `
             <h3>Password Reset Request</h3>
@@ -399,7 +398,6 @@ app.post("/auth/register", upload.single("profile_image"), async (req, res) => {
       department,
       designation,
     } = req.body;
-
     const hashedPassword = await bcrypt.hash(password, 10);
     const profile_image = req.file ? req.file.filename : null;
 
@@ -432,10 +430,10 @@ app.post("/auth/register", upload.single("profile_image"), async (req, res) => {
         const sendEmail = require("./utils/sendEmail");
 
         sendEmail({
-          to: user.email,
+          to: req.body.email,
           subject: "Welcome to Dayflow HRMS",
           html: `
-    <h2>Welcome ${user.first_name} 👋</h2>
+    <h2>Welcome ${req.body  .first_name} 👋</h2>
     <p>Your Dayflow HRMS account has been created successfully.</p>
     <p>You can now log in and manage your work activities.</p>
     <br/>
