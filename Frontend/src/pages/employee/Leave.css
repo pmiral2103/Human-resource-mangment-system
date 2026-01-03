@@ -1,0 +1,51 @@
+.leave-page {
+  padding: 40px;
+  color: white;
+  position: relative;
+}
+
+.leave-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.leave-form input,
+.leave-form select,
+.leave-form textarea {
+  padding: 12px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: white;
+}
+
+.leave-form button {
+  background: linear-gradient(135deg, #00ffb3, #00c3ff);
+  border: none;
+  border-radius: 30px;
+  padding: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 14px;
+  text-align: left;
+}
+
+.pending { color: orange; }
+.approved { color: #00ffb3; }
+.rejected { color: #ff4d4d; }
+
+.msg {
+  margin-top: 15px;
+  color: #00ffb3;
+}
